@@ -4,7 +4,6 @@ import {
   InlineQueryResultBuilder,
   webhookCallback,
 } from "https://deno.land/x/grammy@v1.22.4/mod.ts";
-import { run } from "https://deno.land/x/grammy_runner@v2.0.3/mod.ts";
 
 // LaTeX Rendering Code
 const CONVERSION_URL =
@@ -142,7 +141,7 @@ noSelf.chatType(["group", "supergroup"]).on(":text", async (ctx) => {
 
 if (Deno.env.get("DEBUG")) {
   bot.catch((err) => console.error(err));
-  run(bot);
+  bot.start();
 } else {
   Deno.serve(
     webhookCallback(bot, "std/http", {
