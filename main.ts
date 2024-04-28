@@ -82,7 +82,9 @@ bot.on("inline_query", async (ctx) => {
     await ctx.answerInlineQuery([
       InlineQueryResultBuilder
         .article("err", "Invalid LaTeX", { description: eq })
-        .text(eq),
+        .text(eq, {
+          entities: [{ type: "code", offset: 0, length: eq.length }],
+        }),
     ]);
     return;
   }
