@@ -62,7 +62,7 @@ RENDERING is always done inside an align* environment.
 INPUT is read from
   - inline queries (typing @${ctx.me.username} …)
   - text messages in a private chat
-  - code/pre formatting inside text messages in a group chat if the formatted pieces of text are surrounded by $ signs
+  - code formatting inside text messages in a group chat if the formatted pieces of text are surrounded by $ signs
 
 SOURCE is available at github.com/KnorpelSenf/ltexbot
 
