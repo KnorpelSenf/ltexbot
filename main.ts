@@ -144,5 +144,9 @@ if (Deno.env.get("DEBUG")) {
   bot.catch((err) => console.error(err));
   run(bot);
 } else {
-  Deno.serve(webhookCallback(bot, "std/http", { secretToken: token }));
+  Deno.serve(
+    webhookCallback(bot, "std/http", {
+      secretToken: token.replaceAll(":", "_"),
+    }),
+  );
 }
